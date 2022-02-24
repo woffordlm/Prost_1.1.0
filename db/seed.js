@@ -13,11 +13,28 @@ module.exports = (db) => {
       password: process.env.USER_PWD,
       isAdmin: false
     }).then(() => {
-      db.Example.create({
-        text: 'Sample item',
-        description: 'Adam can\'t see this',
-        UserId: 2
+      db.Drink.create({
+        name: "Vodka Soda",
+        image_url: "www.image.com",
+        category_id:1,
+        ingredients: "vodka and soda",
+        glass_type: "coupe",
+        instructions: "mix and drink"
       });
-    });
+    })
+    .then(()=> {
+      db.Comment.create({
+        comment_text:"such a good comment",
+        user_id:1,
+        drink_id:1
+      })
+    })
+    .then(()=> {
+      db.Stars.create({
+        starTotal:5,
+        drink_id:1,
+        user_id:1
+      })
+    })
   });
 };

@@ -1,55 +1,59 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config//config');
-
-// create post model
-class Drink extends Model{}
-
-// create fields/columns for Post model
-Drink.init(
+module.exports = function (sequelize, DataTypes) {
+  const Drink = sequelize.define(
+    "Drink",
     {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
       image_url: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          isURL: true
-        }
+          isURL: true,
+        },
       },
       category_id: {
         type: DataTypes.INTEGER,
-        references: {
-          model: 'categories',
-          key: 'id'
-        }
+        // references: {
+        //   model: "categories",
+        //   key: "id",
+        // },
       },
       ingredients: {
-        type: DataTypes.JSON,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       glass_type: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
       instructions: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
     },
     {
       sequelize,
       freezeTableName: true,
       underscored: true,
-      modelName: 'drinks'
+      modelName: "drinks",
     }
   );
-  
-  module.exports = Drink;
+
+  // Example.associate = function (models) {
+  //   Example.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
+
+  return Drink;
+};

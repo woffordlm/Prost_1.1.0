@@ -1,10 +1,7 @@
 const bcrypt = require('bcrypt');
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
 
-class User extends Model {}
-
-  User.init({
+module.exports = function (sequelize, DataTypes) {
+  const User = sequelize.define('User', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -42,17 +39,11 @@ class User extends Model {}
           });
         }
       }
-    },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user'
-
+    }
   });
 
   User.associate = function (models) {
-    User.hasMany(models.Example, {
+    User.hasMany(models.Drink, {
       onDelete: 'cascade'
     });
   };
@@ -78,4 +69,5 @@ class User extends Model {}
     return values;
   };
 
-  module.exports = User
+  return User;
+};
