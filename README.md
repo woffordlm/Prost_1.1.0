@@ -1,4 +1,4 @@
-<img src="//images.squarespace-cdn.com/content/v1/578d380ed1758ea279dff7ad/1470955349442-O34E4WM5KSY1H4UEAEFP/alleywebwhite.png?format=1500w" alt="Alley Twenty Six">
+<img src="https://images.squarespace-cdn.com/content/v1/578d380ed1758ea279dff7ad/1470955349442-O34E4WM5KSY1H4UEAEFP/alleywebwhite.png?format=1500w">
 <br>
 
 # Alley Twenty Six Cocktail Recipe Reference
