@@ -36,5 +36,10 @@ module.exports = (db) => {
         user_id:1
       })
     })
+    .then(()=> {
+      db.Category.create({
+        name: "Classics",
+      })
+    })
   });
 };
