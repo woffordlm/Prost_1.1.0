@@ -1,7 +1,10 @@
 const bcrypt = require('bcrypt');
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
 
-module.exports = function (sequelize, DataTypes) {
-  const User = sequelize.define('User', {
+class User extends Model {}
+
+  User.init({
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
@@ -39,7 +42,13 @@ module.exports = function (sequelize, DataTypes) {
           });
         }
       }
-    }
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user'
+
   });
 
   User.associate = function (models) {
@@ -69,5 +78,4 @@ module.exports = function (sequelize, DataTypes) {
     return values;
   };
 
-  return User;
-};
+  module.exports = User
