@@ -1,3 +1,4 @@
+
 module.exports = {
   development: {
     username: process.env.SEQUELIZE_USER,
