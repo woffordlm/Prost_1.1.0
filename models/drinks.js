@@ -21,10 +21,10 @@ module.exports = function (sequelize, DataTypes) {
       },
       category_id: {
         type: DataTypes.INTEGER,
-        // references: {
-        //   model: "categories",
-        //   key: "id",
-        // },
+        references: {
+          model: "categories",
+          key: "id",
+        },
       },
       ingredients: {
         type: DataTypes.STRING,
