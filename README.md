@@ -16,3 +16,12 @@
 - [Joseph Polizzotto](https://github.com/polizoto)
 - [Jonathan Werz](https://github.com/jdwerz83)
 - [Luke Wofford](https://github.com/woffordlm)
+
+## Technologies
+
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+<br>
+
+[![Npm package version](https://badgen.net/npm/v/express)](https://npmjs.com/package/express)
+<br>
+
